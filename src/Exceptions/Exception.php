@@ -1,4 +1,5 @@
 <?php
+
 namespace NABVelocity\Exceptions;
 
 use GuzzleHttp\Exception\ClientException as GuzzleClientException;
@@ -12,7 +13,7 @@ abstract class Exception extends \Exception {
     }
 
     public function getResponse () {
-        if($this->previous instanceof GuzzleClientException)) {
+        if($this->previous instanceof GuzzleClientException) {
             return $this->previous->getResponse();
         }
 
