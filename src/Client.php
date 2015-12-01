@@ -155,7 +155,6 @@ class Client
 
             return json_decode($response->getBody());
         } catch (GuzzleClientException $e) {
-
             $this->lastResponse = $e->getResponse();
 
             throw ExceptionHandler::getException($e);
