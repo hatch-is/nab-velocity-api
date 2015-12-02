@@ -331,6 +331,12 @@ class Client
     {
         $this->checkSignOn();
 
+        if (empty($merchantProfileId)) {
+            throw new UnhandledException(
+                'Merchant profile ID is empty to perform payment transaction', 0
+            );
+        }
+
         return new \VelocityProcessor(
             $this->applicationProfileId, $merchantProfileId, $this->workflowId,
             $this->isTestAccount, $this->identityToken, $this->getSessionToken()
